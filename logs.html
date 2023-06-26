@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+ 
+{% block content %} 
+    <h1>{% block title %} Logs {% endblock %}</h1> 
+    <table> 
+        <thead> 
+          <tr> 
+            <th>IP</th> 
+            <th>Start Date</th> 
+            <th>End Date</th> 
+            <th>Query</th> 
+          </tr> 
+        </thead> 
+        <tbody> 
+          {% for log in logs %} 
+          <tr> 
+            <td>{{ log.ip }}</td> 
+            <td>{{ log.start_date }}</td> 
+            <td>{{ log.end_date }}</td> 
+            <td>{{ log.query }}</td> 
+             
+          </tr> 
+          {% endfor %} 
+        </tbody> 
+      </table> 
+{% endblock %}
